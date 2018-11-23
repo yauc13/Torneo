@@ -31,7 +31,19 @@ class ListCampeonatoActivity : AppCompatActivity() {
         listViewCamp?.adapter = adapterChampionShip
         adapterChampionShip?.notifyDataSetChanged()
 
+        listViewCamp?.setOnItemClickListener { parent, view, position, id ->
+            Toast.makeText(this@ListCampeonatoActivity, "Item One selected: $position ,parent: ${parent.getItemAtPosition(position)}",   Toast.LENGTH_SHORT).show()
+
+        }
+
 }
+
+    fun viewAdminChampionShip(idChampionShip: Int){
+
+
+    }
+
+
     fun generateData(): ArrayList<Campeonato> {
         var result = ArrayList<Campeonato>()
 
