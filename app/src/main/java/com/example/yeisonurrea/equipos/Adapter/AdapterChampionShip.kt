@@ -10,7 +10,7 @@ import android.widget.TextView
 import com.example.yeisonurrea.equipos.Model.Campeonato
 import com.example.yeisonurrea.equipos.R
 
-class AdapterChampionShip(private var activity: Activity, private var items: ArrayList<Campeonato>): BaseAdapter() {
+class AdapterChampionShip(private var activity: Activity, private var items: MutableList<Campeonato>): BaseAdapter() {
     private class ViewHolder(row: View?) {
         var txtNameChamp: TextView? = null
         var txtIdChamp: TextView? = null

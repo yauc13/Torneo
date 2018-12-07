@@ -15,16 +15,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val txtLogin = findViewById<EditText>(R.id.main_txtusername)
-        val txtPassword = findViewById<EditText>(R.id.main_txtpassword)
+        val txtLogin = findViewById<EditText>(R.id.main_txtusername).toString()
+        val txtPassword = findViewById<EditText>(R.id.main_txtpassword).toString()
 
-        main_btnlogin.setOnClickListener({
-            login(txtLogin.text.toString(), txtPassword.text.toString())
-        })
+        main_btnlogin.setOnClickListener{
+            login(txtLogin, txtPassword)
+        }
+
+        main_btnsignup.setOnClickListener{
+            signup()
+        }
 
     }
 
-    fun login(txtlog : String, txtPass : String){
+    private fun login(txtlog : String, txtPass : String){
         if(txtlog=="yauc13" && txtPass=="123"){
             Toast.makeText(this, "login $txtlog", Toast.LENGTH_SHORT).show()
             val intent = Intent(this@MainActivity, ListCampeonatoActivity::class.java)
@@ -36,6 +40,11 @@ class MainActivity : AppCompatActivity() {
         }else {
             Toast.makeText(this, "login y password incorrectos", Toast.LENGTH_SHORT).show()
         }
+    }
+
+   private fun signup (){
+       val intent = Intent(this@MainActivity, CreateUserActivity::class.java)
+       startActivity(intent)
     }
 
 

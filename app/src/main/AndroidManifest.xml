@@ -19,7 +19,14 @@
             </intent-filter>
         </activity>
         <activity android:name=".ListCampeonatoActivity" />
-        <activity android:name=".OptionCampeonatoActivity"></activity>
+        <activity android:name=".OptionCampeonatoActivity" />
+        <activity
+            android:name=".OptCamTabPos"/>
+        <activity
+            android:name=".OptCamTabGru"/>
+        <activity
+            android:name=".OptCamTabGol"/>
+        <activity android:name=".CreateUserActivity"></activity>
     </application>
 
 </manifest>

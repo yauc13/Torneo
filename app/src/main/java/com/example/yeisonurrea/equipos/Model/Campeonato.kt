@@ -1,6 +1,8 @@
 package com.example.yeisonurrea.equipos.Model
 
-class Campeonato {
+import java.io.Serializable
+
+class Campeonato : Serializable {
     var idChampionShip: Int = 0
     var nameChampionShip: String = ""
     var idUser: Int = 0
