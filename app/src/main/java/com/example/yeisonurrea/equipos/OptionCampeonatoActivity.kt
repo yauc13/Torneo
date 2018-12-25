@@ -1,14 +1,10 @@
 package com.example.yeisonurrea.equipos
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.EditText
-import android.widget.Toast
-import com.example.yeisonurrea.equipos.Model.Campeonato
-import kotlinx.android.synthetic.main.activity_option_campeonato.*
-import android.support.v4.app.FragmentTabHost
+import android.support.v7.app.AppCompatActivity
 import android.widget.TabHost
+import kotlinx.android.synthetic.main.activity_option_campeonato.*
 
 
 class OptionCampeonatoActivity : AppCompatActivity() {

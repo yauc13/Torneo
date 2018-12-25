@@ -1,6 +1,8 @@
 package com.example.yeisonurrea.equipos.Model
 
-class User {
+import java.io.Serializable
+
+class User: Serializable {
     var idUser : Int = 0;
     var userName: String = ""
     var password: String = ""

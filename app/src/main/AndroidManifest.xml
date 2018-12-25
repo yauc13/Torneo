@@ -20,13 +20,14 @@
         </activity>
         <activity android:name=".ListCampeonatoActivity" />
         <activity android:name=".OptionCampeonatoActivity" />
-        <activity
-            android:name=".OptCamTabPos"/>
-        <activity
-            android:name=".OptCamTabGru"/>
-        <activity
-            android:name=".OptCamTabGol"/>
-        <activity android:name=".CreateUserActivity"></activity>
+        <activity android:name=".OptCamTabPos" />
+        <activity android:name=".OptCamTabGru" />
+        <activity android:name=".OptCamTabGol" />
+        <activity android:name=".CreateUserActivity" />
+
+        <activity android:name=".CreateChampionshipActivity">
+
+        </activity>
     </application>
 
 </manifest>

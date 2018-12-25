@@ -7,19 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import com.example.yeisonurrea.equipos.Model.Campeonato
+import com.example.yeisonurrea.equipos.Model.Championship
 import com.example.yeisonurrea.equipos.R
 
-class AdapterChampionShip(private var activity: Activity, private var items: MutableList<Campeonato>): BaseAdapter() {
+class AdapterChampionShip(private var activity: Activity, private var items: MutableList<Championship>): BaseAdapter() {
     private class ViewHolder(row: View?) {
         var txtNameChamp: TextView? = null
         var txtIdChamp: TextView? = null
         var txtIdUser: TextView? = null
 
         init {
-            this.txtNameChamp = row?.findViewById<TextView>(R.id.cusListChamp_name)
-            this.txtIdChamp = row?.findViewById<TextView>(R.id.cusListChamp_idChamp)
-            this.txtIdUser = row?.findViewById<TextView>(R.id.cusListChamp_idUser)
+            this.txtNameChamp = row?.findViewById(R.id.cusListChamp_name) as TextView?
+            this.txtIdChamp = row?.findViewById(R.id.cusListChamp_idChamp) as TextView?
+            this.txtIdUser = row?.findViewById(R.id.cusListChamp_idUser) as TextView?
         }
     }
 
@@ -44,7 +44,7 @@ class AdapterChampionShip(private var activity: Activity, private var items: Mut
         return view as View
     }
 
-    override fun getItem(i: Int): Campeonato {
+    override fun getItem(i: Int): Championship {
         return items[i]
     }
 
