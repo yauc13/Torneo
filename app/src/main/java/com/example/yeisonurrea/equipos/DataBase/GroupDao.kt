@@ -3,11 +3,12 @@ package com.example.yeisonurrea.equipos.DataBase
 import android.content.ContentValues
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase
-import com.example.yeisonurrea.equipos.Model.Championship
+import com.example.yeisonurrea.equipos.Model.Group
+
 import com.example.yeisonurrea.equipos.Util.Table
 import com.example.yeisonurrea.equipos.Util.querySQL
 
-class ChampionshipDao {
+class GroupDao {
     private val db : SQLiteDatabase
 
     private var handler : DataBaseHandler? =null
@@ -19,31 +20,31 @@ class ChampionshipDao {
 
     }
 
-    fun insertChampionship(championship : Championship) : Boolean{
+    fun insertGroup(group : Group) : Boolean{
         var resp= false
         var cv = ContentValues()
-        cv.put(Table.TChampionShip.COL_CHAMP_NAME, championship.nameChampionShip)
-        cv.put(Table.TUser.COL_USER_IDUSER,championship.idUser)
-        var result = db.insert(Table.TChampionShip.TABLE_CHAMPIONSHIP,null,cv)
+        cv.put(Table.TGroup.COL_GROUP_NAME, group.nameGroup)
+        cv.put(Table.TChampionShip.COL_CHAMP_IDCHAMP,group.idChampionship)
+        var result = db.insert(Table.TGroup.TABLE_GROUP,null,cv)
         if(result >= -1.toLong()) {
             resp = true
-            
+
         }
 
         return resp
     }
 
-    fun loadChampionshipByIdUser(idUser: Int) :ArrayList<Championship>{
-        var list = ArrayList<Championship>()
+    fun loadChampionshipByIdUser(idUser: Int) :ArrayList<Group>{
+        var list = ArrayList<Group>()
         val query = querySQL.SELECT_CHAMP_BY_IDUSER
         val result = db.rawQuery(query,arrayOf(idUser.toString()))
         if(result.moveToFirst()){
             do {
-                var cham = Championship()
-                cham.idChampionShip = result.getInt(result.getColumnIndex(Table.TChampionShip.COL_CHAMP_IDCHAMP))
-                cham.nameChampionShip = result.getString(result.getColumnIndex(Table.TChampionShip.COL_CHAMP_NAME))
-                cham.idUser= result.getInt(result.getColumnIndex(Table.TUser.COL_USER_IDUSER))
-                list.add(cham)
+                var group = Group()
+                group.idGroup = result.getInt(result.getColumnIndex(Table.TGroup.COL_GROUP_IDGROUP))
+                group.nameGroup = result.getString(result.getColumnIndex(Table.TGroup.COL_GROUP_NAME))
+                group.idChampionship= result.getInt(result.getColumnIndex(Table.TChampionShip.COL_CHAMP_IDCHAMP))
+                list.add(group)
             }while (result.moveToNext())
         }
 

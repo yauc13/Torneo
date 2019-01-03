@@ -4,6 +4,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.TabHost
+import com.example.yeisonurrea.equipos.Model.Championship
+import com.example.yeisonurrea.equipos.Model.Group
 import kotlinx.android.synthetic.main.activity_option_campeonato.*
 
 
@@ -19,8 +21,10 @@ class OptionCampeonatoActivity : AppCompatActivity() {
         addAllTab()
 
 
-        //var bundle = intent.extras
-        //val cam:Campeonato = bundle.getSerializable("cam") as Campeonato
+        var bundle = intent.extras
+        val cam:Championship = bundle.getSerializable("cam") as Championship
+
+
 
         //val txtIdCamp = findViewById<EditText>(R.id.optCamp_txtidCamp)
         //val txtNomCamp = findViewById<EditText>(R.id.optCamp_txtName)
@@ -55,6 +59,17 @@ class OptionCampeonatoActivity : AppCompatActivity() {
         val intent = Intent(this, className)
         tabSpec.setContent(intent)
         tabHost.addTab(tabSpec)
+    }
+
+    private fun generateData(): ArrayList<Group> {
+        var result = ArrayList<Group>()
+
+        for (i in 0..9) {
+            var group = Group( i,"Group $i", 1)
+            result.add(group)
+        }
+
+        return result
     }
 
 }

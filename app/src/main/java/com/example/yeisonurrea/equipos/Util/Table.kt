@@ -26,4 +26,13 @@ class Table {
         }
     }
 
+    abstract class TGroup{
+        companion object {
+            val TABLE_GROUP = "group"
+            val COL_GROUP_IDGROUP = "idGroup"
+            val COL_GROUP_NAME = "nameGroup"
+
+        }
+    }
+
 }

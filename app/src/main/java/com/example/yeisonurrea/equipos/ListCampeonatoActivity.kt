@@ -8,10 +8,13 @@ import android.view.MenuItem
 import android.widget.ListView
 import android.widget.Toast
 import com.example.yeisonurrea.equipos.Adapter.AdapterChampionShip
+import com.example.yeisonurrea.equipos.DataBase.ChampionshipDao
 import com.example.yeisonurrea.equipos.Model.Championship
 import com.example.yeisonurrea.equipos.Model.User
+import com.example.yeisonurrea.equipos.R.id.listCam_idListCamp
 
 class ListCampeonatoActivity : AppCompatActivity() {
+    private var chamDao : ChampionshipDao? =null
     var listViewCamp: ListView? = null
     var adapterChampionShip: AdapterChampionShip? = null
     var listCamp: MutableList<Championship> = mutableListOf()
@@ -21,12 +24,14 @@ class ListCampeonatoActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_campeonato)
 
+        chamDao = ChampionshipDao(this)
+
         var bundle = intent.extras
         user= bundle.getSerializable("user") as User
         Toast.makeText(this, "login list ${user?.idUser},${user?.userName} ", Toast.LENGTH_SHORT).show()
 
-        listViewCamp = findViewById(R.id.listCam_idListCamp)
-        listCamp = this.generateData()
+        listViewCamp = findViewById(listCam_idListCamp)
+        listCamp = this.chamDao!!.loadChampionshipByIdUser(user!!.idUser)
         adapterChampionShip =  AdapterChampionShip(this,listCamp)
 
         listViewCamp?.adapter = adapterChampionShip
@@ -37,6 +42,11 @@ class ListCampeonatoActivity : AppCompatActivity() {
         }
 
 }
+
+
+    private fun loadChampionshipByIdUser(idUser: Int){
+
+    }
 
     fun viewAdminChampionShip(idChampionShip: Int){
 

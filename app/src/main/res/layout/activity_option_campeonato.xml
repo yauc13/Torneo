@@ -21,7 +21,11 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"></TabWidget>
+                android:layout_height="wrap_content"
+                android:background="@color/green"
+                >
+
+            </TabWidget>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"
@@ -29,11 +33,29 @@
                 android:layout_height="match_parent">
 
                 <RelativeLayout
+                    android:id="@+id/tab_two"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:background="#aa55FF"
+                    android:backgroundTint="@color/azul">
+
+                    <ListView
+                        android:id="@+id/optChamp_idListGroup"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    </ListView>
+
+                </RelativeLayout>
+
+                <RelativeLayout
                     android:id="@+id/tab_one"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:background="#003456">
+                    android:background="#d82496c7"
+                    android:backgroundTint="@color/azul">
 
                     <TextView
                         android:layout_width="match_parent"
@@ -43,27 +65,15 @@
 
                 </RelativeLayout>
 
-                <RelativeLayout
-                    android:id="@+id/tab_two"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:background="#aa55FF">
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="TAB2"
-                        android:textSize="20sp"/>
-
-                </RelativeLayout>
 
                 <RelativeLayout
                     android:id="@+id/tab_three"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="center"
-                    android:background="#9f1d1d">
+                    android:background="#9f1d1d"
+                    android:backgroundTint="@color/azul">
 
                     <TextView
                         android:layout_width="match_parent"
