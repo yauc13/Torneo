@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <RelativeLayout
+                <LinearLayout
                     android:id="@+id/tab_two"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -47,7 +47,7 @@
 
                     </ListView>
 
-                </RelativeLayout>
+                </LinearLayout>
 
                 <RelativeLayout
                     android:id="@+id/tab_one"
