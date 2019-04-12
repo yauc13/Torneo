@@ -55,19 +55,18 @@ class UserDao {
         return list
     }
 
-    fun readUser(nameUser: String, password: String) : User {
-        var user = User()
+    fun readUser(nameUser: String, password: String) : User? {
+        var user: User? = null
         val query = querySQL.SELECT_USER_LOGIN
         val result = db.rawQuery(query,arrayOf(nameUser,password))
         if(result.count >0) {
             if (result.moveToFirst()) {
-                do {
 
+                result.moveToFirst()
+                user = User()
                     user.idUser = result.getString(result.getColumnIndex(Table.TUser.COL_USER_IDUSER)).toInt()
                     user.userName = result.getString(result.getColumnIndex(Table.TUser.COL_USER_NAME))
                     user.password = result.getString(result.getColumnIndex(Table.TUser.COL_USER_PASSWORD))
-
-                } while (result.moveToNext())
             }
         }
         result.close()

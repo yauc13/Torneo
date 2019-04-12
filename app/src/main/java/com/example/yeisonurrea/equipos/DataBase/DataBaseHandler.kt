@@ -13,6 +13,7 @@ class DataBaseHandler (context: Context) : SQLiteOpenHelper(context,Table.TDB.DA
     override fun onCreate(db: SQLiteDatabase?) {
         db?.execSQL(querySQL.CREATE_TABLE_USER)
         db?.execSQL(querySQL.CREATE_TABLE_CHAMPIONSHIP)
+        //db?.execSQL(querySQL.CREATE_TABLE_GROUP)
 
     }
 
