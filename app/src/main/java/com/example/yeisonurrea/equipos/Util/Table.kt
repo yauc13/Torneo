@@ -35,4 +35,13 @@ class Table {
         }
     }
 
+    abstract class TTeam{
+        companion object {
+            val TABLE_TEAM = "team"
+            val COL_TEAM_IDTEAM = "idGroup"
+            val COL_TEAM_NAMETEAM = "nameTeam"
+
+        }
+    }
+
 }
